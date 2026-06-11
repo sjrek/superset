@@ -123,6 +123,13 @@ const RowLevelSecurityList = lazy(
     ),
 );
 
+const ProductAssetList = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "ProductAssetList" */ 'src/pages/ProductAssetList'
+    ),
+);
+
 type Routes = {
   path: string;
   Component: React.ComponentType;
@@ -220,6 +227,10 @@ export const routes: Routes = [
   {
     path: '/rowlevelsecurity/list',
     Component: RowLevelSecurityList,
+  },
+  {
+    path: '/product-assets/list/',
+    Component: ProductAssetList,
   },
   {
     path: '/sqllab/',
